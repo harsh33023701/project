@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Yadav - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e8f1f5, #cfd9df);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #3d5a80, #647aa3);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8em;
+    margin: 0;
+    color: #ffd166;
+}
+
+header:hover {
+    background: linear-gradient(90deg, #647aa3, #3d5a80);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffd166;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffd166;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: #f4a261;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Main content */
+main {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+section {
+    margin: 60px 0;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #3d5a80;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #3d5a80, #ee6c4d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 15px;
+}
+
+/* About Section */
+#about img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    transition: transform 0.4s ease;
+}
+
+#about img:hover {
+    transform: scale(1.05);
+}
+
+/* Project cards */
+.project-card {
+    background: linear-gradient(135deg, #fff, #f9f9f9);
+    border: 1px solid #3d5a80;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.project-card h3 {
+    font-size: 1.6em;
+    color: #3d5a80;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-color: #ee6c4d;
+}
+
+/* Skills section */
+#skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    justify-content: center;
+}
+
+#skills ul li {
+    background-color: #3d5a80;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#skills ul li:hover {
+    background-color: #ee6c4d;
+    transform: scale(1.1);
+}
+
+/* Qualifications Section */
+#qualifications {
+    margin: 50px 0;
+}
+
+#qualifications p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 15px;
+    line-height: 1.6;
+    background-color: rgba(237, 246, 249, 0.5);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact a {
+    color: #3d5a80;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #f4a261;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3d5a80;
+    color: #fff;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #about img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Harsh Yadav</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+        
+    <main>
+
+        <main>
+            <section id="about">
+                <img src="download.jpg" alt=""><br>
+                <h2>About Me</h2>
+                <p>Hello! I am Harsh Yadav, a passionate developer with a knack for creating innovative solutions. I specialize in web development and love experimenting with new technologies to build impactful digital experiences.</p>
+            </section>
+        
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Built a website that provides basic information on how to dispose of E-Waste properly</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Built a website in which one can predict its future by giving answers to some of the problems</p>
+                </div>
+            </section>
+        
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                </ul>
+            </section>
+        
+            <!-- Qualifications Section -->
+            <section id="qualifications">
+                <h2>Qualifications</h2>
+                <p>Doing Bachelor’s Degree in Computer Science</p>
+                <p>Completed my 10 from S.T. Paul's</p>
+                <p>Participated in multiple hackathons and coding competitions</p>
+            </section>
+        
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Email: harshyadav33023701@gmail.com</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/feed/" target="_blank">Harsh Yadav</a></p>
+            </section>
+        </main>
+        
+    </main>
+</body>
+</html>
